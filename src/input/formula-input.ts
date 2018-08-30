@@ -7,12 +7,12 @@ import { window } from 'vscode';
 export async function showInputBox() {
     const result = await window.showInputBox({
         value: '',
-        valueSelection: [2, 4],
         placeHolder: 'For example: x*2',
         validateInput: text => {
-            return null;
-            // var re = new RegExp("^[0-1x*+-\\]*$");
-            // return re.test(text) ? null : 'Specify x and operators!';
+            // TODO: validate if possible in better way
+            var re = new RegExp("(x){1}");
+            const isValid = re.test(text);
+            return isValid ? null : 'Specify x and operators!';
         }
     });
     return result || '';

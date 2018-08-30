@@ -22,11 +22,14 @@ export class SmartSelectController {
 
             const editor = vscode.window.activeTextEditor;
             if (editor && input) {
+                const lines = this._parser.CalculateLineNumbers(input, editor.document.lineCount);
                 let sels = new Array<vscode.Selection>();
-                let pos = new vscode.Position(0, editor.document.lineAt(0).range.end.character);
-                sels.push(new vscode.Selection(pos, pos));
-                pos = new vscode.Position(2, editor.document.lineAt(0).range.end.character);
-                sels.push(new vscode.Selection(pos, pos));
+
+                lines.forEach(lineNumber => {
+                    let pos = new vscode.Position(lineNumber, editor.document.lineAt(0).range.end.character);
+                    sels.push(new vscode.Selection(pos, pos));
+                });
+
                 editor.selections = sels;
             }
         })
