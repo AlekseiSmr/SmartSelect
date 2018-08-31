@@ -31,6 +31,12 @@
     },
     "icon": "images/logo.png",
     "license": "MIT",
+    "keywords": [
+        "select lines",
+        "smart select",
+        "formula",
+        "multi select"
+    ],
     "devDependencies": {
         "@types/mocha": "^2.2.42",
         "@types/node": "^8.10.25",
