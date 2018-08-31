@@ -15,12 +15,10 @@
     ],
     "main": "./out/extension",
     "contributes": {
-        "commands": [
-            {
-                "command": "extension.enterFormula",
-                "title": "Smart select: Enter formula"
-            }
-        ]
+        "commands": [{
+            "command": "extension.enterFormula",
+            "title": "Smart select: Enter formula"
+        }]
     },
     "scripts": {
         "vscode:prepublish": "npm run compile",
@@ -37,6 +35,14 @@
         "formula",
         "multi select"
     ],
+    "homepage": "https://github.com/AlekseiSmr/SmartSelect#readme",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/AlekseiSmr/SmartSelect"
+    },
+    "bugs": {
+        "url": "https://github.com/AlekseiSmr/SmartSelect/issues"
+    },
     "devDependencies": {
         "@types/mocha": "^2.2.42",
         "@types/node": "^8.10.25",
