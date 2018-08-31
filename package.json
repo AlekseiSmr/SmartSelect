@@ -1,8 +1,8 @@
 {
     "name": "smart-selection",
-    "displayName": "SmartSelection",
+    "displayName": "Smart Selection",
     "description": "This extension has varios ability to select multi lines.",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "publisher": "alekseiermolov",
     "engines": {
         "vscode": "^1.26.0"
