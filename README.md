@@ -8,8 +8,9 @@ The main rule of entering your formula is that your must specify 'x' variable. T
 
 
 > Tip: Below your can find simple examples of formulas and their results.
-- `x*2+1`: Select all odd lines
-- `x*2`: Select all even lines
+- `x*2+1`: Select all even lines
+- `x*2`: Select all odd lines
+- `x`: Select all lines
 
 ## Requirements
 

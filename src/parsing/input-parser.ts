@@ -5,22 +5,34 @@ export class Parser {
      * ParseFromFormula
      * formula: string :Array<int>    
     */
-    public CalculateLineNumbers(formula: string, totalLines: number): Array<number> {
+    public calculateLineNumbers(formula: string, totalLines: number): Array<number> {
         let lineNumbers: Array<number> = [];
         const parser = math.parser();
 
         let counter = 0;
         let linePosition = 0;
         while (counter < totalLines) {
-            parser.set('x', linePosition++);
-            const result = parser.eval(formula);
-            if (result < totalLines) {
-                lineNumbers.push(result);
+            let formulaResult: number;
+            try {
+                parser.set('x', linePosition++);
+                formulaResult = parser.eval(formula);
             }
-            counter = result;
+            catch {
+                break;
+            }
+
+            if (formulaResult < 0) {
+                break;
+            }
+
+            if (formulaResult >= 0 && formulaResult < totalLines) {
+                lineNumbers.push(Math.round(formulaResult));
+            }
+            counter = formulaResult;
         }
 
-        return lineNumbers;
+        let unique = [...new Set(lineNumbers)];
+        return unique;
     }
 
     public dispose() { }
