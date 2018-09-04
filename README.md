@@ -4,6 +4,8 @@
 
 This extension allows you to select multiple rows in your document throught math formula.
 
+![Example](images/movie.gif)
+
 The main rule of entering your formula is that your must specify 'x' variable. The counting of rows is started from zero and 'x' will be substituted incrementaly. The possibilities for entering formulas depend on the mathjs library and are presented on the official website http://mathjs.org
 
 
